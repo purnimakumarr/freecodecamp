@@ -1,0 +1,22 @@
+const convertLetter = (letter) => {
+  let updatedLetter;
+  if(letter >= 'A' && letter <= 'Z') {
+      updatedLetter = letter.charCodeAt(0) + 13;
+      if(updatedLetter > "Z".charCodeAt(0)) updatedLetter -= "Z".charCodeAt(0) + 1 - "A".charCodeAt(0);
+      return String.fromCharCode(updatedLetter);
+  }
+  return letter;
+}
+
+function rot13(str) {
+  str = str.toUpperCase();
+  let tempArr = str.split("");
+  let generatedCipher = "";
+  for(let i in tempArr) {
+    generatedCipher += convertLetter(tempArr[i]);
+  }
+
+  return generatedCipher;
+}
+
+console.log(rot13("SERR CVMMN!"));

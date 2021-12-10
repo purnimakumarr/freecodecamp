@@ -1,0 +1,21 @@
+function telephoneCheck(str) {
+  const regex = /[0-9()-]/g;
+  if(!regex.test(str)) return false;
+  const phoneNumber = str.match(/[0-9]/g);
+  const regex1= /^\d-?(\s)*(\(\d{3}\)|\d{3}-?)(\s)*(\(\d{3}\)|\d{3}-?)(\s)*(\(\d{4}\)|\d{4})$/;
+  const regex2= /^(\d{3}-?|\(\d{3}\))(\s)*(\d{3}-?|\(\d{3}\))(\s)*(\d{4}|\(\d{4}\))$/;
+
+  //not a valid phone number
+  if(phoneNumber.length < 10 || phoneNumber.length > 11) return false;
+  
+  if(phoneNumber.length === 11) {
+      //country code is not 1
+    if(str[0] !== '1') return false;
+    return (regex1).test(str);
+  } 
+  else if(phoneNumber.length === 10) {
+    return (regex2).test(str);
+  }
+}
+
+console.log(telephoneCheck("555-555-5555"));

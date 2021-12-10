@@ -1,0 +1,66 @@
+const romanSymbols = {
+    1: "I",
+    5: "V",
+    10: "X",
+    50: "L",
+    100: "C",
+    500: "D",
+    1000: "M"
+  }
+
+function convertThousands(romanNumeral, thousands) {
+  if(thousands <= 3) {
+    romanNumeral += romanSymbols[1000].repeat(thousands);
+  }
+  return romanNumeral;
+}
+
+function convertHundreds(romanNumeral, hundreds) {
+  if(hundreds <= 3) {
+    romanNumeral += romanSymbols[100].repeat(hundreds); 
+  } else if(hundreds >= 4 && hundreds <= 8) {
+    romanNumeral = romanNumeral + romanSymbols[100].repeat(Math.max(0, 5 - hundreds)) + romanSymbols[500] + romanSymbols[100].repeat(Math.max(0, hundreds - 5));
+  } 
+  else {
+    romanNumeral = romanNumeral + romanSymbols[100] + romanSymbols[1000];
+  }
+  return romanNumeral;
+}
+
+function convertTens(romanNumeral, tens) {
+  if(tens <= 3) {
+    romanNumeral += romanSymbols[10].repeat(tens);
+  } else if(tens >= 4 && tens <= 8) {
+    romanNumeral = romanNumeral + romanSymbols[10].repeat(Math.max(0, 5 - tens)) + romanSymbols[50] + romanSymbols[10].repeat(Math.max(0, tens - 5));
+  } else {
+    romanNumeral = romanNumeral + romanSymbols[10] + romanSymbols[100];
+  }
+  return romanNumeral;
+}
+
+function convertOnes(romanNumeral, ones) {
+  if(ones <= 3) {
+    romanNumeral += romanSymbols[1].repeat(ones);
+  } else if(ones >= 4 && ones <= 8) {
+    romanNumeral = romanNumeral + romanSymbols[1].repeat(Math.max(0, 5 - ones)) + romanSymbols[5] + romanSymbols[1].repeat(Math.max(0, ones - 5));
+  } else {
+    romanNumeral = romanNumeral + romanSymbols[1] + romanSymbols[10];
+  }
+  return romanNumeral;
+}
+
+function convertToRoman(num) {
+  const thousands = parseInt(num / 1000);
+  const hundreds = parseInt((num % 1000) / 100);
+  const tens = parseInt((num % 100) / 10);
+  const ones = parseInt(num % 10);
+  let romanNumeral = '';
+  romanNumeral = convertThousands(romanNumeral, thousands);
+  romanNumeral = convertHundreds(romanNumeral, hundreds);
+  romanNumeral = convertTens(romanNumeral, tens);
+  romanNumeral = convertOnes(romanNumeral, ones);
+
+ return romanNumeral;
+}
+
+convertToRoman(36);

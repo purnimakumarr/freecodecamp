@@ -1,0 +1,59 @@
+//possible currencies that can be used to pay back change
+const currencyValues = [
+  ["PENNY", 0.01],
+  ["NICKEL", 0.05],
+  ["DIME", 0.1],
+  ["QUARTER", 0.25],
+  ["ONE", 1.0],
+  ["FIVE", 5.0],
+  ["TEN", 10.0],
+  ["TWENTY", 20.0],
+  ["HUNDRED", 100.0]
+];
+
+function checkCashRegister(price, cash, cid) {
+  let change = cash - price;
+
+  //calculate totalCash available in drawer
+  let totalCash = cid.reduce(function(accumulator, currVal) {
+    return accumulator + currVal[1];
+  }, 0);
+
+  //if total cash in drawer is not enough
+  if(totalCash < change) return {status: "INSUFFICIENT_FUNDS", change: []};
+
+  //if the total cash is exactly the same as the change
+  if(totalCash === change) return {status: "CLOSED", change: cid.filter(item => item)};
+
+  //if there is more cash in the drawer than the change
+  let changeObj = {}; //object to hold change
+  const cidObj = {}; //object to hold cash in drawer
+
+  //convert cid array into object
+  cid.reduce(function(acc, curr) {
+    cidObj[curr[0]] = curr[1];
+  }, 0);
+
+
+  while(change > 0) {
+    let max = []; //maximum bill upto which we can use
+    for(let i in currencyValues) if(change >= currencyValues[i][1]) max = currencyValues[i];
+    if(max.length > 0) {
+      if(cidObj[max[0]] > 0) {
+        change = (change - max[1]).toPrecision(4);
+        cidObj[max[0]] = cidObj[max[0]] - max[1];
+
+        //fill changeObj with bills and coins that used to pay back change
+        if(!changeObj.hasOwnProperty(max[0]))
+        changeObj[max[0]] = max[1];
+      else changeObj[max[0]] += max[1];
+
+      } else currencyValues.splice(currencyValues.indexOf(max));  //if the currency is not avalaible in cash drawer remove from possible currencies
+    } else return {status: "INSUFFICIENT_FUNDS", change: []}; //if we can't return the exact amount of change
+  }
+  let changeArr = [];
+  for(let i in changeObj) changeArr.push([i, changeObj[i]]);
+  return {status: "OPEN", change: changeArr};
+}
+
+console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));

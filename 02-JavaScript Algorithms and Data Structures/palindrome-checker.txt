@@ -1,0 +1,26 @@
+function palindrome(str) {
+  //remove unwanted characters
+  const regex = /[a-zA-Z0-9]+/ig;
+  let tempArr = str.match(regex);
+
+  //retreive string without unwanted characters
+  let str1 = "";
+  for(let i in tempArr) {
+    tempArr[i] = tempArr[i].toLowerCase();
+    str1 += tempArr[i];
+  }
+
+  //reverse string
+  let str2= "";
+  for(let i = str1.length - 1; i >= 0; i--) {
+    str2 += str1[i];
+  }
+
+  //comparison
+  if(str1 === str2) return true; //palindrome
+  else return false; //not palindrome
+}
+
+
+
+palindrome("Five|\_/|four");

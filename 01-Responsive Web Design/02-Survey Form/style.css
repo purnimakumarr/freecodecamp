@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #ffdeeb;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.form-header-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 3.2rem 3.2rem 0 3.2rem;
+  color: #333;
+  text-align: center;
+}
+
+.form-header-title {
+  font-size: 4.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.form-header-desc {
+  font-size: 2.2rem;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 3.2rem;
+  padding: 2.4rem;
+  background: linear-gradient(to bottom, #d6336c, #e64980);
+  border-radius: 4px;
+  color: #fff;
+}
+
+.form label {
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.field-box input,
+.field-box select,
+.field-box textarea {
+  font-family: inherit;
+  color: #333;
+  padding: 1.2rem;
+  width: 100%;
+  background-color: #fff0f6;
+  border-radius: 6px;
+  border: none;
+  font-size: 1.8rem;
+
+  transition: all 0.4s;
+}
+
+.field-box input:hover,
+.field-box select:hover,
+.field-box textarea:hover {
+  background-color: #ffdeeb;
+}
+
+.field-box--checkbox div {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  column-gap: 1.2rem;
+  align-items: baseline;
+}
+
+.form *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+.form textarea {
+  display: block;
+  width: 100%;
+  height: 10rem;
+  padding: 0.8rem 0 0 1.2rem;
+}
+
+.form textarea::placeholder,
+form input::placeholder {
+  color: #333;
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background-color: #801f41;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #6b1a36;
+  cursor: pointer;
+}
