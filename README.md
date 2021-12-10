@@ -11,7 +11,7 @@
 4. A Technical Documentation Page | [View site](https://codepen.io/purnimakumar/full/BadpxWO)
 5. An Online Personal Portfolio Website | [View site](https://codepen.io/purnimakumar/full/JjyEmYM)
   
-### For JavaScript Algorithms and Data Structures Certificat:-
+### For JavaScript Algorithms and Data Structures Certificate:-
 1. Palindrome Checker
 2. Roman Numeral Converter
 3. Caesers Cipher
