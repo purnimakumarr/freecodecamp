@@ -2,6 +2,7 @@
 ## Certificates completed
 1. Responsive Web Design Certificate | [View Certificate](https://www.freecodecamp.org/certification/purnimakumar/responsive-web-design)
 2. JavaScript Algorithms and Data Structures Certificate | [View Certificate](https://www.freecodecamp.org/certification/purnimakumar/javascript-algorithms-and-data-structures)
+3. Front End Development Libraries Certifcate
 
 ## Projects
 ### For Responsive Web Design Certificate:-
@@ -17,3 +18,10 @@
 3. Caesers Cipher
 4. Telephone Number Validator
 5. Cash Register
+
+### For Front End Development Libraries Certificate:-
+1. Random Quote Machine | [View site](https://codepen.io/purnimakumar/full/PoKxgPg)
+2. Markdwon Previewer | [View site](https://codepen.io/purnimakumar/full/xxLNQPy)
+3. Drum Machine | [View site](https://codepen.io/purnimakumar/full/XWeraWV)
+4. JavaScript Calculator [View site](https://codepen.io/purnimakumar/full/gOGpyPK)
+5. 25 + 5 Clock [View site](https://codepen.io/purnimakumar/full/jOGyvNb)
