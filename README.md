@@ -23,5 +23,5 @@
 1. Random Quote Machine | [View site](https://codepen.io/purnimakumar/full/PoKxgPg)
 2. Markdwon Previewer | [View site](https://codepen.io/purnimakumar/full/xxLNQPy)
 3. Drum Machine | [View site](https://codepen.io/purnimakumar/full/XWeraWV)
-4. JavaScript Calculator [View site](https://codepen.io/purnimakumar/full/gOGpyPK)
-5. 25 + 5 Clock [View site](https://codepen.io/purnimakumar/full/jOGyvNb)
+4. JavaScript Calculator | [View site](https://codepen.io/purnimakumar/full/gOGpyPK)
+5. 25 + 5 Clock | [View site](https://codepen.io/purnimakumar/full/jOGyvNb)
